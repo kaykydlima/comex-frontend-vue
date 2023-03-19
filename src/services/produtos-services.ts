@@ -11,3 +11,7 @@ export function salvaProduto(produto: Produto): Promise<Produto> {
     body: JSON.stringify(produto),
   }).then((resp) => resp.json());
 }
+
+export function buscaProduto(): Promise<Produto[]> {
+  return fetch(url).then(resp => resp.json())
+}

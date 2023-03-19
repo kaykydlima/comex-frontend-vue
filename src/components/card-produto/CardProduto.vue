@@ -1,11 +1,11 @@
 <template>
   <div class="mais-vendidos__card">
-    <img src="data.url" alt="Texto alternativo da imagem" class="mais-vendidos__card-img">
+    <img :src="url" alt="Texto alternativo da imagem" class="mais-vendidos__card-img">
     <div class="mais-vendidos__card-textos">
-      <h3 class="nome-produto">${data.nome}</h3>
+      <h3 class="nome-produto">{{ nome }}</h3>
       <div class="box-valor-produto">
         <span class="valor-produto-simbolo"></span>
-        <p class="valor-produto">${data.preco}</p>
+        <p class="valor-produto">{{ preco }}</p>
       </div>
     </div>
     <button class="botao-produto">Comprar</button>
@@ -16,7 +16,11 @@
 
   export default defineComponent({
     name: 'CardProduto',
-    
+    props: {
+      nome: String,
+      url: String,
+      preco: String
+    }
   })
 </script>
 <style scoped>
@@ -44,14 +48,14 @@
   }
 
   .box-valor-produto {
-    align-items: flex-end;
+    align-items: flex-start;
     display: flex;
     justify-content: center;
     margin-top: 1rem;
   }
 
   .valor-produto-simbolo {
-    background: url(@/assets/) no-repeat;
+    background: url(@/assets/dolas.svg) no-repeat;
     height: 20px;
     width: 30px;
   }
