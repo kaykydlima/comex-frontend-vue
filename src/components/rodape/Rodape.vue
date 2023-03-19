@@ -1,5 +1,5 @@
 <template>
-  <footer class="container-fluid text-light bg-dark fixed-bottom">
+  <footer class="container-fluid text-light bg-dark bottom">
     <div class="d-flex align-items-initial p-5 justify-content-between box-footer md-flex-row">
       <a href="#"><img src="../../assets/logo.svg" alt="Logo Comex" class="img"></a>
       <ul class="d-flex gap-4 mt-1">

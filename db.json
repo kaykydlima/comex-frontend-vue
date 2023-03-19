@@ -1,0 +1,32 @@
+{
+  "categorias": [
+    {
+      "uuid": "1eaaffef-cd4b-4b47-a0b4-b347b7ea9b36",
+      "nome": "futebol",
+      "criacao": "2023-03-18",
+      "status": "ATIVO",
+      "id": 1
+    },
+    {
+      "uuid": "19ae0bba-a15f-41f0-bb7b-138e3b4a1289",
+      "nome": "tênis",
+      "criacao": "2023-03-18",
+      "status": "ATIVO",
+      "id": 2
+    },
+    {
+      "uuid": "161f2adb-e406-4681-a29b-9f8abc047bec",
+      "nome": "música",
+      "criacao": "2023-03-18",
+      "status": "ATIVO",
+      "id": 3
+    },
+    {
+      "uuid": "ca6134c1-8c16-4be2-8992-0501297788d3",
+      "nome": "teste",
+      "criacao": "2023-03-19",
+      "status": "ATIVO",
+      "id": 4
+    }
+  ]
+}
