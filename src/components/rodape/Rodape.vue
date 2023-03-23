@@ -1,5 +1,5 @@
 <template>
-  <footer class="container-fluid text-light bg-dark bottom">
+  <footer class="container-fluid text-light">
     <div class="d-flex align-items-initial p-5 justify-content-between box-footer md-flex-row">
       <a href="#"><img src="../../assets/logo.svg" alt="Logo Comex" class="img"></a>
       <ul class="d-flex gap-4 mt-1">
@@ -10,36 +10,34 @@
     </div>
   </footer>
 </template>
-<script lang="ts">
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-      
-  })
+<script setup lang="ts">
 </script>
 <style scoped>
-  .img{
-    width: 125px;
+.img{
+  width: 125px;
+}
+
+.icone{
+  font-size: 25px;
+}
+
+@media screen and (max-width: 400px){
+  .box-footer{
+    align-items: center !important;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .box-footer ul{
+    padding: 0 !important;
   }
 
   .icone{
-    font-size: 25px;
+    font-size: 20px;
   }
-
-  @media screen and (max-width: 400px){
-    .box-footer{
-      align-items: center !important;
-      flex-direction: column;
-      gap: 25px;
-    }
-    .box-footer ul{
-      padding: 0 !important;
-    }    
-    .icone{
-      font-size: 20px;
-    }
-    .img{
-      width: 90px;
-    }
+  
+  .img{
+    width: 90px;
   }
+}
 </style>

@@ -16,8 +16,8 @@ export function buscaCategorias(): Promise<Categoria[]> {
   return fetch(url).then(resp => resp.json())
 }
 
-export function apagarCategoria(categoria: Categoria) {
-  return fetch(url, {
+export function apagarCategoria(categoria: Categoria): Promise<void> {
+  return fetch(`${url}/${categoria.id}`, {
     method: 'DELETE'
-  }).then(resp => alert('Categoria excluída com sucesso!'))
+  }).then(resp => alert(`Categoria ${categoria.nome} deletada com sucesso`))
 }

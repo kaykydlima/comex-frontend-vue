@@ -1,45 +1,4 @@
 {
-  "categorias": [
-    {
-      "uuid": "1eaaffef-cd4b-4b47-a0b4-b347b7ea9b36",
-      "nome": "futebol",
-      "criacao": "2023-03-18",
-      "status": "ATIVO",
-      "id": 1
-    },
-    {
-      "uuid": "19ae0bba-a15f-41f0-bb7b-138e3b4a1289",
-      "nome": "tênis",
-      "criacao": "2023-03-18",
-      "status": "ATIVO",
-      "id": 2
-    },
-    {
-      "uuid": "161f2adb-e406-4681-a29b-9f8abc047bec",
-      "nome": "música",
-      "criacao": "2023-03-18",
-      "status": "ATIVO",
-      "id": 3
-    }
-  ],
-  "produtos": [
-    {
-      "nome": "Notebook",
-      "preco": "355,00",
-      "quantidadeEstoque": "90",
-      "descricaoProduto": "Notebook",
-      "categoria": "Informática",
-      "url": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-      "id": 1
-    },
-    {
-      "nome": "Controle Xbox ",
-      "preco": "399,00",
-      "quantidadeEstoque": 8,
-      "descricaoProduto": "Controle para Xbox One",
-      "categoria": "Informática",
-      "url": "https://images.unsplash.com/photo-1586062129117-08db958ba215?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-      "id": 2
-    }
-  ]
+  "categorias": [],
+  "produtos": []
 }

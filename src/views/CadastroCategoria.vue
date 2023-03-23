@@ -1,5 +1,5 @@
 <template>
-  <main class="d-flex flex-column justify-content-center text-light bg-dark bg-gradient h-100 p-4">
+  <div class="d-flex flex-column justify-content-center">
     <form class="container text-light mb-4">
       <h1 class="mb-4">Cadastro de Categoria</h1>
       <fieldset>
@@ -22,52 +22,47 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(categoria, index) in categorias" :key="index">
+          <tr v-for="(categoria) in categorias" :key="categoria.id">
             <td scope="row">{{ categoria.nome }}</td>
             <td>{{ categoria.criacao }}</td>
             <td>{{ categoria.status }}</td>
             <td>
-              <button type="button" class="btn btn-outline-danger" @click="apagarCategoria(categoria)"><i class="bi bi-trash"></i></button>
+              <button type="button" class="btn btn-outline-danger" @click="teste(categoria)"><i class="bi bi-trash"></i></button>
             </td>
           </tr>
         </tbody>
       </table>
     </section>
-  </main>
+  </div>
 </template>
-<script lang="ts">
-  import { defineComponent } from 'vue';
-  import type { Categoria } from '../models/categoria.js'
-  import { criaCategoria } from '../models/categoria.js'
-  import * as categoriaService from '../services/categoria-services.js'
+<script setup lang="ts">
+import { ref, reactive, onMounted } from 'vue';
+import type { Categoria } from '../models/categoria.js'
+import { criaCategoria } from '../models/categoria.js'
+import * as categoriaService from '../services/categoria-services.js'
 
-  export default defineComponent({
-    name: '',
-    data() {
-      return {
-        valorNomeCategoria: '',
-        categorias: [] as Categoria[],
-      }
-    },
-    methods: {
-      salvaCategoria() {
-        if(this.valorNomeCategoria === '') alert('Digite um valor válido')
-        else {
-          let novaCategoria = criaCategoria(this.valorNomeCategoria) 
-          categoriaService.salvaCategoria(novaCategoria).then((categoriaCadastrada: Categoria) => {
-          this.valorNomeCategoria = ''
-          this.categorias.push(categoriaCadastrada)
-        })
-        }
-      },
-      apagarCategoria(categoria: Categoria) {
-        categoriaService.apagarCategoria(categoria).then(() => {
-          this.categorias = this.categorias.filter(c => c.uuid !== categoria.uuid)
-        })
-      }      
-    },
-    mounted() {
-      categoriaService.buscaCategorias().then(resp => this.categorias = resp)
-    }
+const valorNomeCategoria = ref('')
+let categorias = ref<Categoria[]>([]) 
+
+function salvaCategoria(): void {
+  if(!valorNomeCategoria.value) alert ('digite um valor válido!')
+  else {
+    const novaCategoria = criaCategoria(valorNomeCategoria.value)
+    categoriaService.salvaCategoria(novaCategoria).then((categoriaCadastrada: Categoria) => {
+      valorNomeCategoria.value = ''
+      categorias.value.push(categoriaCadastrada)
+    })
+  }
+}
+
+function teste(categoria: Categoria): void {
+  categoriaService.apagarCategoria(categoria).then(() => {
+    categorias.value = categorias.value.filter(c => c.id !== categoria.id)
   })
+}
+
+onMounted(() => {
+  categoriaService.buscaCategorias().then(resp => resp.map(categoria => categorias.value.push(categoria)))
+  //
+})
 </script>
