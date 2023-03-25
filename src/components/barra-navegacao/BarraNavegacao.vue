@@ -17,6 +17,9 @@
           <li class="nav-item">
             <router-link to="/cadastro-categorias" class="nav-link active">Categorias</router-link>
           </li>
+          <li class="nav-item">
+            <router-link to="/cadastro-cliente" class="nav-link active">Cliente</router-link>
+          </li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
