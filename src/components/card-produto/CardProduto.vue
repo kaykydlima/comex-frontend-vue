@@ -8,7 +8,7 @@
       <p class="valor-produto">{{ preco }}</p>
     </div>
   </div>
-  <button class="botao-produto">Comprar</button>
+  <button class="botao-produto" @click="aoAdicionarProduto">Comprar</button>
 </div>
 </template>
 <script setup lang="ts">
@@ -28,6 +28,12 @@ defineProps({
     default: ''
   }
 });
+
+const emits = defineEmits(['adicionaCarrinho'])
+
+function aoAdicionarProduto() {
+  emits('adicionaCarrinho')
+}
 </script>
 <style scoped>
 .mais-vendidos__card {

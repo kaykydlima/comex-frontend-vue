@@ -1,5 +1,22 @@
 {
-  "categorias": [],
-  "produtos": [],
+  "categorias": [
+    {
+      "id": "3d2c0611-fe29-4a20-a93c-cf5b99e98c6c",
+      "nome": "Informática",
+      "criacao": "2023-03-25",
+      "status": "ATIVO"
+    }
+  ],
+  "produtos": [
+    {
+      "nome": "Notebook",
+      "preco": "9999",
+      "quantidadeEstoque": 8,
+      "descricaoProduto": "Notebook",
+      "categoria": "Informática",
+      "url": "https://media.istockphoto.com/id/1389603578/pt/foto/laptop-blank-screen-on-wood-table-with-blurred-coffee-shop-cafe-interior-background-and.jpg?s=1024x1024&w=is&k=20&c=zXqQxfR6VdQHeTbjROSeyAT96lhKB0xGBJf2vwy-fNw=",
+      "id": 1
+    }
+  ],
   "clientes": []
 }

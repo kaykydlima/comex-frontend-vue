@@ -27,7 +27,7 @@
   <section class="container">
     <h2 class="font-4 text-center mb-5 fs-1"><i class="bi bi-star-fill fs-2"></i> Mais vendidos</h2>
     <div class="d-flex aling-items-center justify-content-center flex-row gap-3 flex-wrap">
-      <CardProduto v-for="(produto, index) of produtos" :nome="produto.nome" :url="produto.url" :preco="produto.preco" :key="index" v-if="produtos.length > 0"/>
+      <CardProduto v-for="(produto, index) of produtos" :nome="produto.nome" :url="produto.url" :preco="produto.preco" :key="index" v-if="produtos.length > 0" @adiciona-carrinho="arrProdutos.produtos.push(produto)"/>
       <p v-else>Sem produtos encontrados</p>
     </div>
   </section>
@@ -37,7 +37,10 @@ import { reactive, onMounted } from 'vue';
 import CardProduto from '@/components/card-produto/CardProduto.vue';
 import { buscaProduto } from '@/services/produtos-services.js';
 import type { Produto } from '@/models/produtos';
+import { useStore } from '@/store/index'
 
 const produtos = reactive([]) as Produto[];
-onMounted(() => buscaProduto().then(resp => resp.map(produto => produtos.push(produto))));
+const arrProdutos = useStore()
+
+onMounted(() => buscaProduto().then(resp => resp.map(produto => produtos.push(produto))))
 </script> 
