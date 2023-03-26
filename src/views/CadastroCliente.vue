@@ -39,7 +39,6 @@
             <label for="estado" class="width line-break">Estado:
               <input class="form-control" type="text" id="estado" v-model="endereco.uf" required>
             </label>
-            <input type="tel" v-mask="'##/##/####'" />
           </div>
         </div>
       </div>
